@@ -209,11 +209,49 @@ public class Main extends Overriding {
         System.out.println(scores);
 
         System.out.println();
-        System.out.println("--------------------Question 20: Overloading vs Overriding------------------");
+        System.out.println("--------------------Question 20: Stream Function------------------");
+        System.out.println("The use of stream in java");
+
+        List<Integer> number = Arrays.asList(2, 3, 4, 5);
+
+        // demonstration of map method
+        List<Integer> square = number.stream().map(x -> x*x).toList();
+        System.out.println(square);
+
+        List<String> names = Arrays.asList("Reflection", "Collection", "Stream");
+
+        // demonstration of filter method
+        List<String> result = names.stream().filter(s -> s.startsWith("S")).toList();
+        System.out.println(result);
+
+        // demonstration of sorted method
+        List<String> show = names.stream().sorted().toList();
+
+        System.out.println(show);
+
+        List<Integer> numbers2 = Arrays.asList(2, 3, 4, 5, 2);
+
+        // collect method returns a set
+        Set<Integer> squareSet = numbers2.stream().map(x -> x * x).collect(Collectors.toSet());
+        System.out.println(squareSet);
+
+        // demonstration of forEach method
+        number.stream()
+                .map(x -> x * x)
+                .forEach(System.out::println);
+
+        // demonstration of reduce method
+        int even = number.stream()
+                .filter(x -> x % 2 == 0)
+                .reduce(0, Integer::sum);
+        System.out.println(even);
+
+        System.out.println();
+        System.out.println("--------------------Question 21: Overloading vs Overriding------------------");
         System.out.println("Show examples of overloading and overriding in Java.");
 
         Overloading.printString("ab", 2);
-        
+
         Main main = new Main();
         System.out.println("---Overriding---");
         main.printName();
