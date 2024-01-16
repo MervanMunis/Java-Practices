@@ -1,10 +1,8 @@
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Stack;
+import java.text.SimpleDateFormat;
+import java.util.*;
 import java.util.stream.Collectors;
 
-public class Main {
+public class Main extends Overriding {
     public static void main(String[] args) {
 
         System.out.println("------------------Question 1: Sorting and Finding Minimum/Maximum----------");
@@ -116,7 +114,7 @@ public class Main {
         System.out.println("Formatted String: " + formattedString);
 
         System.out.println();
-        System.out.println("------------------Question 10: Stream and Mapping------------------");
+        System.out.println("------------------Question 11: Stream and Mapping------------------");
         System.out.println("Given a list of integers, square each element and then find the sum of the squared values.");
         int[] numbersToSquare = {2, 3, 4, 5};
 
@@ -128,6 +126,101 @@ public class Main {
         // Displaying the result
         System.out.println("Sum of Squares: " + sumOfSquares);
 
+
+        System.out.println();
+        System.out.println("------------------Question 12: Reverse the given string------------------");
+        System.out.println("How do you reverse a string in java");
+
+        String reverseThis = "Hi, my name is Mervan Munis what is yours.";
+
+        String reversedString = ReverseString.reverseString(reverseThis);
+
+        System.out.println(reversedString);
+
+        System.out.println();
+        System.out.println("------------------Question 13: Checking if there is a vowel------------------");
+        System.out.println("Write a Java program to check if a vowel is present in a string.");
+
+        String vowel = "Hello";
+
+        boolean checkVowel = VowelChecker.isVowel(vowel);
+
+        System.out.println(checkVowel);
+
+        System.out.println();
+        System.out.println("------------------Question 14: Prime Number------------------");
+        System.out.println("Write a Java program to check if the given number is a prime number.");
+
+        System.out.println(PrimeNumber.isPrime(17));
+        System.out.println(PrimeNumber.isPrime(15));
+        System.out.println(PrimeNumber.isPrime(29));
+
+        System.out.println();
+        System.out.println("------------------Question 15: Fibonacci Sequence------------------");
+        System.out.println("Write a Java program to print a Fibonacci sequence using recursion.");
+
+        System.out.println(FibonacciSequence.fibonacciSequenceOf(12));
+
+        System.out.println();
+        System.out.println("--------------------Question 16: Odd Number Checker------------------");
+        System.out.println("How do you check if a list of integers contains only odd numbers in Java?");
+
+        System.out.println(CheckOddNumbers.isOddNumbers(Arrays.asList(1,3,5,9)));
+        System.out.println(CheckOddNumbers.isOddNumbers(Arrays.asList(1,3,6,9)));
+
+        System.out.println();
+        System.out.println("--------------------Question 17: Date Format------------------");
+        System.out.println("How do you print a date in specific format in Java?");
+
+        String pattern = "MM-dd-yyyy";
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
+
+        String date = simpleDateFormat.format(new Date());
+        System.out.println(date);
+
+        System.out.println();
+        System.out.println("--------------------Question 18: Merge Two List------------------");
+        System.out.println(" How do you merge two lists in Java?");
+
+        List<String> list1 = new ArrayList<>();
+        list1.add("1");
+        List<String> list2 = new ArrayList<>();
+        list2.add("2");
+
+        List<String> mergedList = new ArrayList<>(list1);
+        mergedList.addAll(list2);
+        System.out.println(mergedList);
+
+        System.out.println();
+        System.out.println("--------------------Question 19: Sort By HashMap------------------");
+        System.out.println("Write a Java program that sorts HashMap by value.");
+
+        Map<String, Integer> scores = new HashMap<>();
+
+        scores.put("David", 95);
+        scores.put("Jane", 80);
+        scores.put("Mary", 97);
+        scores.put("Lisa", 78);
+        scores.put("Dino", 65);
+        System.out.println(scores);
+
+        scores = SortByValueHashMap.sortByValue(scores);
+
+        System.out.println(scores);
+
+        System.out.println();
+        System.out.println("--------------------Question 20: Overloading vs Overriding------------------");
+        System.out.println("Show examples of overloading and overriding in Java.");
+
+        Overloading.printString("ab", 2);
+        
+        Main main = new Main();
+        System.out.println("---Overriding---");
+        main.printName();
     }
 
+    @Override
+    void printName() {
+        System.out.println("Child Class");
+    }
 }
